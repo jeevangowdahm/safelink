@@ -1,0 +1,197 @@
+.sos-confirm-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sos-confirm-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.sos-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+.sos-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(220, 38, 38, 0.15) 0%, rgba(10, 10, 15, 0.9) 60%, rgba(10, 10, 15, 0.98) 100%);
+}
+
+.sos-confirm-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  padding: 24px;
+}
+
+.sos-back {
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  padding: 8px;
+  z-index: 2;
+}
+
+.sos-confirm-card {
+  background: rgba(15, 15, 22, 0.9);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  border-radius: 24px;
+  padding: 32px 24px;
+  backdrop-filter: blur(30px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sos-confirm-title {
+  font-size: 1.375rem;
+  font-weight: 800;
+  color: var(--red-400);
+  text-align: center;
+}
+
+.sos-divider {
+  height: 1px;
+  background: var(--border-subtle);
+}
+
+.sos-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sos-label {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+
+.sos-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+}
+
+.sos-contact-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.sos-contact-name {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.sos-contact-rel {
+  display: block;
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+}
+
+.sos-info-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.sos-countdown-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 0;
+}
+
+.sos-countdown {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--red-400);
+  line-height: 1;
+}
+
+.sos-countdown-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Emergency Call Grid */
+.sos-call-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.sos-call-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 14px 8px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.sos-call-btn:hover {
+  transform: translateY(-2px);
+}
+
+.sos-call-police {
+  background: rgba(37, 99, 235, 0.15);
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+.sos-call-ambulance {
+  background: rgba(220, 38, 38, 0.15);
+  border-color: rgba(220, 38, 38, 0.3);
+}
+
+.sos-call-women {
+  background: rgba(168, 85, 247, 0.15);
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+.sos-call-fire {
+  background: rgba(234, 88, 12, 0.15);
+  border-color: rgba(234, 88, 12, 0.3);
+}
+
+.sos-call-icon {
+  font-size: 1.5rem;
+}
+
+.sos-call-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.8);
+}
+
+.sos-call-num {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: white;
+}

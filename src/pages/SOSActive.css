@@ -1,0 +1,203 @@
+.sos-active-page {
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.sos-active-header {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sos-active-header-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+.sos-active-header-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 10, 15, 0.2) 0%, rgba(10, 10, 15, 0.95) 100%);
+}
+
+.sos-active-header-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.sos-shield-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(220, 38, 38, 0.2);
+  border: 2px solid rgba(220, 38, 38, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sos-sent-title {
+  font-family: var(--font-tech);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--red-400);
+  letter-spacing: 4px;
+}
+
+.sos-sent-sub {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.sos-contacts-card {
+  margin-bottom: 16px;
+}
+
+.sos-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.sos-recipient-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.sos-recipient-row:last-child {
+  border-bottom: none;
+}
+
+.sos-recipient-info {
+  flex: 1;
+}
+
+.sos-recipient-name {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.sos-recipient-phone {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.sos-status-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sos-status-badge.delivered {
+  background: rgba(220, 38, 38, 0.12);
+  color: var(--red-400);
+}
+
+.sos-status-badge.sent {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-secondary);
+}
+
+.status-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* Map */
+.sos-map-card {
+  margin-bottom: 16px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.sos-map-container {
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  overflow: hidden;
+}
+
+.sos-location-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--bg-card-solid);
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* Emergency Calls */
+.emergency-call-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.emergency-call-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 8px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-card);
+  background: var(--bg-card);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.emergency-call-btn:active {
+  transform: scale(0.95);
+}
+
+.emergency-call-btn.medical { border-color: rgba(37, 99, 235, 0.3); }
+.emergency-call-btn.police { border-color: rgba(234, 88, 12, 0.3); }
+.emergency-call-btn.fire { border-color: rgba(220, 38, 38, 0.3); }
+
+/* Cancel Modal */
+.sos-cancel-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+}
+
+.sos-cancel-card {
+  width: 100%;
+  max-width: 360px;
+  padding: 28px;
+  text-align: center;
+}
+
+.sos-cancel-card h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}

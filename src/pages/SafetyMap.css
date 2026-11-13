@@ -1,0 +1,238 @@
+.safetymap-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  background: var(--bg-primary);
+}
+
+.safetymap-header {
+  padding: 12px 16px;
+  background: rgba(10, 10, 15, 0.97);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 100;
+}
+
+.safetymap-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.safetymap-title-row h2 {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  flex: 1;
+}
+
+.blink { animation: blink 1.5s ease-in-out infinite; }
+@keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
+
+.safetymap-stats {
+  display: flex;
+  gap: 6px;
+}
+
+.stat-pill {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  font-size: 0.625rem;
+  font-weight: 700;
+}
+
+.stat-total { background: rgba(139, 92, 246, 0.12); color: #A78BFA; }
+.stat-danger { background: rgba(220, 38, 38, 0.12); color: #F87171; }
+.stat-warning { background: rgba(245, 158, 11, 0.12); color: #FBBF24; }
+.stat-safe { background: rgba(34, 197, 94, 0.12); color: #4ADE80; }
+
+.safetymap-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.safetymap-filters {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.safetymap-filters::-webkit-scrollbar { display: none; }
+
+.safetymap-toggles {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.toggle-mini {
+  padding: 4px 8px;
+  border-radius: var(--radius-pill);
+  font-size: 0.625rem;
+  font-weight: 600;
+  background: var(--bg-card);
+  color: var(--text-muted);
+  border: 1px solid var(--border-card);
+  transition: all 0.2s;
+}
+
+.toggle-mini.on {
+  background: rgba(139, 92, 246, 0.15);
+  color: #A78BFA;
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+/* Map */
+.safetymap-map {
+  flex: 1;
+  position: relative;
+  min-height: 0;
+}
+
+.map-floating-info {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1000;
+  padding: 4px 10px;
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+}
+
+/* Zone popup styles */
+.zone-popup {
+  min-width: 200px;
+  font-family: var(--font-body);
+}
+
+.zone-popup-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  font-size: 0.875rem;
+}
+
+.zone-risk-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.zone-popup-desc {
+  font-size: 0.75rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.zone-popup-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.6875rem;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.zone-popup-dir {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.6875rem;
+  color: #3B82F6;
+  font-weight: 600;
+}
+
+/* Bottom zone list */
+.safetymap-bottom {
+  background: rgba(10, 10, 15, 0.97);
+  border-top: 1px solid var(--border-subtle);
+  padding: 8px 16px;
+  padding-bottom: calc(8px + var(--nav-height));
+}
+
+.zone-list-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.zone-list-scroll::-webkit-scrollbar { display: none; }
+
+.zone-mini-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  min-width: 160px;
+  flex-shrink: 0;
+}
+
+.zone-mini-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.zone-mini-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.zone-mini-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.zone-mini-type {
+  font-size: 0.625rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* Leaflet tooltip override */
+.zone-tooltip {
+  background: rgba(10, 10, 15, 0.9) !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+  color: white !important;
+  font-size: 0.6875rem !important;
+  font-weight: 600 !important;
+  border-radius: 6px !important;
+  padding: 4px 8px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5) !important;
+}
+
+.zone-tooltip::before {
+  border-top-color: rgba(10, 10, 15, 0.9) !important;
+}
+
+/* User marker pulse */
+.user-marker {
+  animation: user-pulse 2s ease-in-out infinite;
+}
+
+@keyframes user-pulse {
+  0%, 100% { filter: drop-shadow(0 0 6px rgba(59,130,246,0.4)); }
+  50% { filter: drop-shadow(0 0 14px rgba(59,130,246,0.8)); }
+}

@@ -1,0 +1,224 @@
+.fakecall-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.fakecall-setup {
+  background: var(--bg-card-solid);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  width: 100%;
+  max-width: 380px;
+  position: relative;
+}
+
+.fakecall-setup h2 { font-size: 1.25rem; margin-bottom: 4px; }
+
+.fakecall-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: var(--text-muted);
+}
+
+.fakecall-callers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.fakecall-caller-btn {
+  padding: 10px;
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  font-size: 0.8125rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-primary);
+  transition: all 0.2s;
+}
+
+.fakecall-caller-btn.active {
+  border-color: var(--green-400);
+  background: rgba(34, 197, 94, 0.1);
+}
+
+.fakecall-slider {
+  width: 100%;
+  accent-color: var(--green-400);
+}
+
+/* Waiting */
+.fakecall-waiting {
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.fakecall-spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--border-card);
+  border-top-color: var(--green-400);
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Ringing — Full screen iOS-style */
+.fakecall-fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.fakecall-ring-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #1a1a2e 0%, #0a0a12 100%);
+}
+
+.fakecall-ring-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  width: 100%;
+  padding: 40px 24px;
+}
+
+.fakecall-avatar-ring {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.15);
+  border: 3px solid rgba(34, 197, 94, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  animation: ring-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes ring-pulse {
+  0%, 100% { transform: scale(1); border-color: rgba(34, 197, 94, 0.3); }
+  50% { transform: scale(1.08); border-color: rgba(34, 197, 94, 0.6); }
+}
+
+.fakecall-avatar-big { font-size: 3rem; }
+
+.fakecall-caller-name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: white;
+}
+
+.fakecall-caller-number {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.fakecall-status {
+  font-size: 0.875rem;
+  color: var(--green-400);
+  margin-top: 4px;
+}
+
+.fakecall-actions {
+  display: flex;
+  gap: 60px;
+  margin-top: 60px;
+}
+
+.fakecall-decline {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #DC2626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.fakecall-accept {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #22C55E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  animation: ring-pulse 1.5s ease-in-out infinite;
+}
+
+/* Active call */
+.fakecall-active-bg {
+  background: linear-gradient(180deg, #0a2e1a 0%, #0a0a12 100%);
+}
+
+.fakecall-active-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.fakecall-timer {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.fakecall-active-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--green-400);
+  font-size: 0.875rem;
+}
+
+.fakecall-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green-400);
+  animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.fakecall-end-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #DC2626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-top: 40px;
+}
